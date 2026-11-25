@@ -13,6 +13,9 @@ jobs:
       - name: Zip'i aç
         run: unzip -q firework-fixed-1.21.11.zip -d project
 
+      - name: Plugin kimliğini düzelt
+        run: sed -i "s/net.fabricmc.fabric-loom' version/net.fabricmc.fabric-loom-remap' version/" project/build.gradle
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
